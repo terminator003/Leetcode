@@ -107,9 +107,9 @@ class Solution
         pair<bool,int> left = sumtree(root->left);
         pair<bool,int> right = sumtree(root->right);
         
-        bool sum = root->data == left.second + right.second;
+        int sum = left.second + right.second;
         pair<bool,int> ans;
-        if(sum && left.first && right.first){
+        if(root->data == sum && left.first && right.first){
             ans.first = true;
             ans.second = root->data + left.second + right.second;
             
